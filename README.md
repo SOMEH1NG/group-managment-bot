@@ -11,3 +11,7 @@ group-managment-bot
 │   └── db.js
 └── package.json
 ```
+# heroku deployment.
+
+[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/SOMEH1NG/group-managment-bot-)
+
