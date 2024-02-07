@@ -1,5 +1,6 @@
 # group-managment-bot in JavaScript with Telegraf library.
 
+```bash
 group-managment-bot
 ├── bot
 │   ├── index.js
@@ -9,3 +10,4 @@ group-managment-bot
 ├── database
 │   └── db.js
 └── package.json
+```
