@@ -1,0 +1,38 @@
+{
+  "name": "group-managment-bot",
+  "description": "group-managment-bot",
+  "repository": "https://github.com/SOMEH1NG/group-managment-bot",
+  "scripts": {
+    "start": "node bot/index.js"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "dependencies": {
+    "telegraf": "^4.0.0"  // Add other dependencies if needed
+  },
+  "keywords": ["telegram", "bot"],
+  "license": "MIT",
+  "env": {
+    "NODE_ENV": "production",
+    "BOT_TOKEN": {
+      "description": "Telegram Bot Token"
+    }
+  },
+  "addons": [
+    {
+      "plan": "heroku-postgresql",
+      "options": {
+        "version": "12"
+      }
+    }
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ],
+  "files": [
+    "bot/**/*.js"
+  ]
+}
