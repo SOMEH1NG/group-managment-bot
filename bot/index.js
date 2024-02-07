@@ -3,6 +3,8 @@ const fs = require('fs');
 const path = require('path');
 
 const botToken = process.env.BOT_TOKEN;
+const herokuAppName = process.env.HEROKU_APP_NAME;
+
 const port = process.env.PORT || 8080; 
 
 if (!botToken) {
@@ -27,7 +29,7 @@ loadPlugins(bot);
 
 bot.launch({
   webhook: {
-    domain: process.env.HEROKU_APP_NAME + '.herokuapp.com',
+    domain: herokuAppName + '.herokuapp.com',
     port: port,
   },
 });
