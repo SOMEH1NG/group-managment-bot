@@ -17,6 +17,9 @@
     "NODE_ENV": "production",
     "BOT_TOKEN": {
       "description": "Telegram Bot Token"
+    },
+    "HEROKU_APP_NAME": {
+      "description": "Heroku App Name"
     }
   },
   "addons": [
