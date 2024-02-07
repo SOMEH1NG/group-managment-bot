@@ -3,6 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 const botToken = process.env.BOT_TOKEN;
+const port = process.env.PORT || 8080; 
 
 if (!botToken) {
   console.error('Please provide a BOT_TOKEN environment variable.');
@@ -24,4 +25,10 @@ const loadPlugins = (bot) => {
 
 loadPlugins(bot);
 
-bot.launch();
+bot.launch({
+  webhook: {
+    domain: process.env.HEROKU_APP_NAME + '.herokuapp.com',
+    port: port,
+  },
+});
+
