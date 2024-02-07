@@ -5,10 +5,15 @@ const path = require('path');
 const botToken = process.env.BOT_TOKEN;
 const herokuAppName = process.env.HEROKU_APP_NAME;
 
-const port = process.env.PORT || 8080; 
+const port = process.env.PORT || 8080;
 
 if (!botToken) {
   console.error('Please provide a BOT_TOKEN environment variable.');
+  process.exit(1);
+}
+
+if (!herokuAppName) {
+  console.error('Please provide a HEROKU_APP_NAME environment variable.');
   process.exit(1);
 }
 
@@ -29,8 +34,7 @@ loadPlugins(bot);
 
 bot.launch({
   webhook: {
-    domain: herokuAppName + '.herokuapp.com',
+    domain: `https://${herokuAppName}.herokuapp.com`,
     port: port,
   },
 });
-
